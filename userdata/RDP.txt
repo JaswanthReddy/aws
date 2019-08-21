@@ -1,0 +1,58 @@
+Install XRDP on Ubuntu Server with XFCE Template
+In this tutorial we can check how to install XRDP on Ubuntu Server with XFCE Template
+
+First of all, RDP stands for Remote Desktop Protocol which is developed by Microsoft, through which a user can connect to another computer over a network connection with a graphical interface. The user needs to install an RDP client software on their local computer and the remote computer must install a RDP server software. The RDP client software is installed on most of the Microsoft Windows versions, Linux, iOS, Android, and Unix operating systems. The port for RDP is 3389 for tcp connection and udp connections. Microsoft currently uses their official RDP client software as “Remote Desktop Connection”.
+
+In this documentation, we are going to see how to setup this RDP server software on Ubuntu server. For that, we have to learn more about XRDP. It is an open source Remote Desktop Protocol server. XRDP uses Remote Desktop Protocol to connect to a remote computer with a GUI for the user. Xrdp is the main server which is accepting connection from RDP client through port 3389. The Xrdp contains RDP, security, MCS, ISO, TCP layers, and a simple window manager. The RDP has 3 security levels between RDP client and RDP server. Low, Medium, High. The Low security level is 40-bit data encryption only from client to server, medium security level is 40-bit encryption in both directions, and high security level is 128-bit encryption in both directions. The Xrdp currently supports all the 3 encryption security levels via xrdp.ini file. The Xrdp modules are loaded at runtime to provide the real functionality. The Xrdp project is under GNU Public License(GPL) version 0.7.0. The latest version of Xrdp is 0.9.1 officially released on December 22,2016.
+
+Let us discuss about how to setup Xrdp software to connect to Linux systems using the built-in Remote Desktop Client. The most important part while using Xrdp with Ubuntu is you have to install an additional alternate desktop environment.
+
+ 
+
+Installation steps
+
+Login to the Ubuntu server and follow the steps one by one.
+
+1) First of all, you need to update the server with latest packages. For this action type the following command in terminal
+
+# apt-get update
+
+ 
+
+2) Install the standard XRDP package from the Ubuntu repository. Type the following command on the terminal to install the package from repository.
+
+# apt-get install xrdp
+
+Then you will be informed about the package size. To proceed with the installation, type Y and wait for the installation to complete.
+
+ 
+
+3) After installing XRDP, you need to install the alternate desktop environment. We are going to install the xfce4. For installing the xfce4 desktop environment type the following command on the terminal.
+
+# apt-get install xfce4
+
+Then you will be informed about the package size. To proceed with the installation, type Y and wait for the installation to complete.
+
+ 
+
+4) Configure the Ubuntu server for xrdp to know that the xfce desktop environment will be used instead of Gnome or Unity. To configure these settings, you have to type the following command in terminal.
+
+# echo “xfce4-session” > ~/.xsession
+
+ 
+
+5) Start the xrdp service on Ubuntu server by typing below command in terminal.
+
+# /etc/init.d/xrdp start
+
+And then check the status of the xrdp service by issuing the command below.
+
+# /etc/init.d/xrdp status
+
+ 
+
+6) Test the xrdp connection on to the Ubuntu server through a RDP client on a Windows machine “Remote Desktop Connection”. Start the Remote Desktop Connection on your windows system and then type the IP address of the Ubuntu server on the field named “Computer”. You should see a xrdp login screen of Ubuntu server, enter the username and password of the server and then press OK. You will see a dialog box showing the login initialization process. It will lead to the xfce desktop and you should able to perform work through this window.
+
+ 
+
+If you need any further assistance please contact our support department.
