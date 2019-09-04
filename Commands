@@ -1,0 +1,3 @@
+change EC2 Ubuntu password
+
+sudo passwd ubuntu
