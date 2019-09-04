@@ -1,3 +1,6 @@
 change EC2 Ubuntu password
 
 sudo passwd ubuntu
+
+https://ropenscilabs.github.io/r-docker-tutorial/04-Dockerhub.html
+
