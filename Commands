@@ -14,3 +14,12 @@ https://k8s.camp/running-kubernetes/kind/
 
 https://k8s.camp/getting-started/1/
 
+
+
+ kubectl apply -f deployment.yaml
+kubectl describe deployment
+ kubectl get pods
+$ kubectl get svc
+i$ kubectl delete deployment
+$ kubectl delete deployment --all
+$ kubectl get svc
